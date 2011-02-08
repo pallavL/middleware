@@ -3,17 +3,10 @@
  * CPSB Project main JS file
  ***************************************/
 
-var cpsb				= {};
-var orderManagement 	= {};
-var items				= {};
-var replenishment		= {};
-var inventoryView		= {};
-var transactionHistory	= {};
-var errorControlLog		= {};
-var reports				= {};
-var testPage			= {};
+var CPSB	=  CPSB || {};
 
-cpsb.navMenu = function() {
+
+CPSB.navMenu = function() {
 
 	jQuery("ul.subnav").parent().append("<span></span>");
 
@@ -34,7 +27,7 @@ cpsb.navMenu = function() {
 };
 
 //TODO unprocessed
-orderManagement.unprocessedOrders = function() {
+CPSB.unprocessedOrders = function() {
 	jQuery("#list10").jqGrid(
 					{
 						sortable : true,
@@ -284,7 +277,7 @@ orderManagement.unprocessedOrders = function() {
 };
 
 //TODO Released Orders
-orderManagement.releasedOrders = function() {
+CPSB.releasedOrders = function() {
 
 	jQuery("#list10")
 			.jqGrid(
@@ -538,7 +531,7 @@ orderManagement.releasedOrders = function() {
 
 
 //TODO internal Orders
-orderManagement.internalOrders = function() {
+CPSB.internalOrders = function() {
 	jQuery("#l").datetimepicker({
 		showOn:'button',
 		buttonImage:'../../image/icon_cal.png',
@@ -778,7 +771,7 @@ orderManagement.internalOrders = function() {
 };
 
 //TODO Business Errors
-errorControlLog.businessErrors = function() {
+CPSB.businessErrors = function() {
 	jQuery("#datepicker").datepicker( {
 		showOn : 'button',
 		buttonText : 'Select a date',
@@ -878,7 +871,7 @@ errorControlLog.businessErrors = function() {
 };
 
 //TODO Add Spog
-items.addSpog = function() {
+CPSB.addSpog = function() {
 	$.validator.setDefaults( {
 		submitHandler : function() {
 			var spogName = $("input#spogname").val();
@@ -960,7 +953,7 @@ items.addSpog = function() {
 };
 
 //TODO Inventory View
-inventoryView.inventoryView = function() {
+CPSB.inventoryView = function() {
 
 	jQuery("#inventoryInq").jqGrid(
 			{
@@ -1062,7 +1055,7 @@ inventoryView.inventoryView = function() {
 };
 
 //TODO NOT Taught
-items.notTaught = function() {
+CPSB.notTaught = function() {
 
 	jQuery("#notTaught").jqGrid(
 					{
@@ -1111,7 +1104,7 @@ items.notTaught = function() {
 
 
 //TODO Transaction History
-transactionHistory.transactionHistory = function(){
+CPSB.transactionHistory = function(){
 	
 	jQuery("#sdate").datepicker({
 		showOn:'button',
